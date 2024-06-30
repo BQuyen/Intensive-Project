@@ -1,0 +1,137 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(182, 249, 221);
+}
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 20px;
+}
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: cursive;
+    background: linear-gradient(to right, #ffc120, #faa69e);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+.payment-container {
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tour-summary{
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:30%;
+    height: 300px;
+    font-size: 17px;
+} 
+.payment-container form {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width:35%;
+    font-size: 17px;
+}
+
+.tour-summary h2, .payment-container form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"], input[type="number"], button {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 50%;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient( #ffffff, rgb(182, 249, 221));
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+    bottom: 0;
+}
+
+
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px;
+    background: #0f0f0f;
+    border-radius: 65%;
+}
+
+.social-icons a:hover {
+    background: #3b3b3b;
+}

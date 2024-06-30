@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login Form</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        font-family: Arial, sans-serif;
+      }
+      .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+      }
+      #background-video {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        height: 100%;
+        transform: translate(-50%, -50%);
+        object-fit: cover;
+        object-position: center;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        width: 300px;
+        text-align: center;
+        z-index: 1;
+      }
+      .container h2 {
+        color: #ff8214;
+        margin-bottom: 20px;
+      }
+      .input-group {
+        margin-bottom: 15px;
+      }
+      .input-group input {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-sizing: border-box;
+      }
+      .input-group button {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        background-color: #ff8214;
+        color: #fff;
+        cursor: pointer;
+      }
+      .input-group button:hover {
+        background-color: #fbac53;
+      }
+      .link {
+        color: #ff8214;
+        text-decoration: none;
+        display: block;
+        margin-top: 15px;
+      }
+      .link:hover {
+        color: #ad580e;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-background">
+      <video autoplay muted loop id="background-video">
+        <source src="./video/wave.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="container">
+      <h2>Đăng nhập</h2>
+      <div class="input-group">
+        <input type="text" placeholder="Email" id="emailLogin" />
+      </div>
+      <div class="input-group">
+        <input type="password" placeholder="Password" id="passwordLogin" />
+      </div>
+      <div class="input-group">
+        <button id="login">Login</button>
+      </div>
+      <a href="register.html" class="link">Chưa có tài khoản? Đăng ký ngay</a>
+      <p id="error-message" style="color: red"></p>
+      <a id="redirect-link" href="./home.html" style="display: none;"></a>
+    </div>
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+      import {
+        getAuth,
+        signInWithEmailAndPassword,
+      } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyD4LoEZuOpThXPeF4y-dnTfAO4hTUtwn04",
+        authDomain: "summertravel-c678c.firebaseapp.com",
+        projectId: "summertravel-c678c",
+        storageBucket: "summertravel-c678c.appspot.com",
+        messagingSenderId: "1014082318126",
+        appId: "1:1014082318126:web:5d62e1b37e6cadd56354bf",
+        measurementId: "G-D9SVVJ4HME",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+
+      // Event listener for the login button
+      document
+        .getElementById("login")
+        .addEventListener("click", async function () {
+          const email = document.getElementById("emailLogin").value;
+          const password = document.getElementById("passwordLogin").value;
+          const errorMessage = document.getElementById("error-message");
+
+          // Validate form
+          if (email === "") {
+            alert("Please enter your email");
+            return;
+          }
+          if (password === "") {
+            alert("Please enter your password");
+            return;
+          }
+
+          try {
+            const userCredential = await signInWithEmailAndPassword(
+              auth,
+              email,
+              password
+            );
+            const user = userCredential.user;
+
+            console.log("User logged in successfully!");
+            localStorage.setItem("username", email);
+           // Kích hoạt chuyển hướng bằng cách click vào phần tử a ẩn
+           document.getElementById("redirect-link").click();
+          } catch (error) {
+            errorMessage.textContent = `Đăng nhập thất bại`;
+          }
+        });
+    </script>
+  </body>
+</html>
+

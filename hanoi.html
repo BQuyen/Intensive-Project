@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour tickets</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    padding: 5px 20px;
+    width: 100%;
+    color: white;
+    z-index: 10;
+    background: #00000050;
+}
+nav {
+    width: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 10px 20px;
+}
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: cursive;
+    background: linear-gradient(to right, #ffc120, #f8a39b);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 25px;
+    transition: background-color 0.3s;
+    font-size: 18px;
+}
+
+nav a:hover {
+    color: #ffc120;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(248, 246, 246);
+    min-width: 150px;
+    z-index: 1;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: rgb(0, 0, 0);
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s;
+}
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* Hero Section */
+.hero-section {
+    position: relative;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hero-title {
+    font-size: 5em;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    position: absolute;
+}
+.city-info {
+    display: flex;
+    padding: 40px 20px;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.city-info h2 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+}
+
+.city-info p {
+    max-width: 500px;
+}
+
+.city-map {
+    margin-top: 20px;
+}
+
+.city-map img {
+    max-width: 600px;
+    height: auto;
+}
+
+/* Tickets Container */
+.tickets-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 20px;
+    text-align: center;
+}
+.tickets-container h2::after {
+    content: "";
+    display: block;
+    width: 90px;
+    height: 4px;
+    background-color: #73d976;
+    margin: 10px auto 0;
+    border-radius: 2px;
+}
+.tickets-container h2 {
+    font-weight: 700;
+    color: #333; 
+    margin-bottom: 50px;
+    color: #ffd700;
+    text-align: center;
+    font-size: 2.4em;
+}
+.ticket-wrap{
+    display: flex;
+}
+.ticket-card {
+    width: 350px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-right: 30px;
+    margin-bottom: 40px;
+}
+
+.ticket-card:hover .ticket-image {
+    transform: scale(1.1);
+}
+.img-wrap{
+    overflow:hidden;
+    height: 250px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+.ticket-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.ticket-details {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.ticket-info {
+    margin-bottom: 15px;
+}
+
+.tour-name {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.duration, .price {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.actions a {
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.book-now{
+    padding: 10px;
+    background-color: #73d976;
+    color: white;
+}
+.book-now:hover{
+    background-color: #5aa85d;
+}
+.view-details{
+    padding: 10px;
+    border:2px solid #73d976;
+    color: #73d976;
+}
+.view-details:hover {
+    background-color: #73d976;
+    color: white;
+}
+footer {
+    padding: 20px;
+    background: linear-gradient(to right, #ffc120, #f8a39b);
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px;
+    background: #0f0f0f;
+    border-radius: 65%;
+}
+
+.social-icons a:hover {
+    background: #3b3b3b;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">SummerTravel</div>
+        <nav>
+            <a href="./home.html">Home</a>
+            <div class="dropdown">
+                <a href="#" class="dropbtn"><i class="fas fa-map-marker-alt"></i> Địa điểm</a>
+                <div class="dropdown-content">
+                    <a href="./hanoi.html">Hà Nội</a>
+                    <a href="./danang.html">Đà Nẵng</a>
+                    <a href="./hue.html">Huế</a>
+                    <a href="./nhatrang.html">Nha Trang</a>
+                    <a href="./phuquoc.html">Phú Quốc</a>
+                    <a href="./dalat.html">Đà Lạt</a>
+                    <a href="./ninhbinh.html">Ninh Bình</a>
+                    <a href="./hoian.html">Hội An</a>
+                </div>
+            </div>
+            <a href="#">Blog</a>
+        </nav>
+    </header>
+    
+    <div class="hero-section">
+        <img src="https://vcdn1-dulich.vnecdn.net/2022/06/16/World-Travel-2-9241-1655367719.jpg?w=460&h=0&q=100&dpr=2&fit=crop&s=SIpl4S10YNSepb3Q-Fm6OQ" alt="City Image" class="hero-image">
+        <h1 class="hero-title">HÀ NỘI</h1>
+    </div>
+    
+    <div class="city-info">
+        <div class="city-map">
+            <img src="https://statics.vinwonders.com/ban-do-ha-noi-11_1685938324.jpg" alt="Hanoi Map">
+        </div>
+        <div class="info">
+            <h2>Thông tin về thành phố Hà Nội</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque bibendum tortor, vitae condimentum arcu elementum eu. Praesent facilisis nec nulla at vehicula. Morbi vehicula felis quis purus euismod, a vulputate ex posuere.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque bibendum tortor.
+        </p>
+        </div>
+    </div>
+    
+    <div class="tickets-container">
+        <h2>Các tour nổi bật</h2>
+        <div class="ticket-wrap">
+            <div class="ticket-card">
+                <div class="img-wrap">  <img src="https://songhongtourist.vn/upload/2022-11-30/-getpaidstock-5.jpg" alt="Tour Image" class="ticket-image"></div>
+                <div class="ticket-details">
+                    <div class="ticket-info">
+                        <h3 class="tour-name">Tour Hà Nội</h3>
+                        <div class="duration">
+                            <i class="fas fa-calendar-alt"></i> 3 ngày
+                        </div>
+                        <div class="price">
+                            <i class="fas fa-money-bill-wave"></i>Từ: 7,000,000 VND
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="" class="view-details">View Details</a>
+                        <a href="" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            <div class="ticket-card">
+                <div class="img-wrap"> <img src="https://file3.qdnd.vn/data/images/0/2022/10/24/phucthang/hanoi%20trong%20toi1.jpg?dpi=150&quality=100&w=870" alt="Tour Image" class="ticket-image"></div>
+                <div class="ticket-details">
+                    <div class="ticket-info">
+                        <h3 class="tour-name">Tour Hà Nội</h3>
+                        <div class="duration">
+                            <i class="fas fa-calendar-alt"></i> 3 ngày
+                        </div>
+                        <div class="price">
+                            <i class="fas fa-money-bill-wave"></i>Từ: 7,000,000 VND
+                        </div>
+                    </div>
+                    <div class="actions">
+                        <a href="" class="view-details">View Details</a>
+                        <a href="" class="book-now">Book Now</a>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <footer>
+        <div class="footer">
+            <h3>Chính sách du lịch</h3>
+            <ul>
+                <li><a href="#">Chính sách hoàn tiền</a></li>
+                <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                <li><a href="#">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h3>Dịch vụ</h3>
+            <ul>
+                <li><a href="#">Thông tin du lịch</a></li>
+                <li><a href="#">Mua sắm trực tuyến</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h3>Liên hệ</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+
+    </script>
+</body>
+</html>

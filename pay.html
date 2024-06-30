@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thanh toán</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="pay.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Summertravel</div>
+        </div>
+    </header>
+    <main>
+        <div class="payment-container">
+            <div class="tour-summary">
+                <h2>Tóm Tắt Tour</h2>
+                <p id="tour-name">Tên tour: </p>
+                <p id="tour-price">Giá: </p>
+                <label for="tour-quantity">Số Lượng Người:</label>
+                <input type="number" id="tour-quantity" name="tour-quantity" value="1" min="1" required>
+                <p id="total-price">Số Tiền Phải Trả: </p>
+            </div>
+
+            <form id="payment-form">
+                <h2>Thông Tin Thanh Toán</h2>
+
+                <label for="full-name">Tên Người Thanh Toán</label>
+                <input type="text" id="full-name" name="full-name" required>
+
+                <label for="phone-number">Số Điện Thoại</label>
+                <input type="text" id="phone-number" name="phone-number" required>
+
+                <label for="card-cvv">CVV</label>
+                <input type="text" id="card-cvv" name="card-cvv" required>
+
+                <button type="submit">Xác Nhận Thanh Toán</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <h3>Chính sách du lịch</h3>
+            <ul>
+                <li><a href="#">Chính sách hoàn tiền</a></li>
+                <li><a href="#">Chính sách bảo mật thông tin</a></li>
+                <li><a href="#">Điều khoản sử dụng</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h3>Dịch vụ</h3>
+            <ul>
+                <li><a href="#">Thông tin du lịch</a></li>
+                <li><a href="#">Mua sắm trực tuyến</a></li>
+            </ul>
+        </div>
+        <div class="footer">
+            <h3>Liên hệ</h3>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+   
+    const tourName = localStorage.getItem('tourName');
+    const tourPrice = localStorage.getItem('tourPrice');
+
+   
+    document.getElementById('tour-name').textContent = `Tên Tour: ${tourName}`;
+    document.getElementById('tour-price').textContent = `Giá: ${tourPrice.toLocaleString()} VND`;
+
+   
+    const tourQuantityInput = document.getElementById('tour-quantity');
+    const totalPriceElement = document.getElementById('total-price');
+
+    function updateTotalPrice() {
+        const quantity = parseInt(tourQuantityInput.value) || 1;
+        const totalPrice = tourPrice * quantity;
+        totalPriceElement.textContent = `Số Tiền Phải Trả: ${totalPrice.toLocaleString()} VND`;
+    }
+
+    tourQuantityInput.addEventListener('input', updateTotalPrice);
+    updateTotalPrice(); 
+
+    
+    const username = localStorage.getItem('username');
+    if (!username) {
+        alert('Bạn cần đăng nhập để thanh toán.');
+        window.location.href = 'http://127.0.0.1:5500/Intensive/Project/login.html';
+        return;
+    }
+
+    document.getElementById('payment-form').addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        
+        const fullName = document.getElementById('full-name').value;
+        const phoneNumber = document.getElementById('phone-number').value;
+        const cardCVV = document.getElementById('card-cvv').value;
+
+        // Kiểm tra thông tin thẻ hợp lệ
+        if (validateCardDetails(fullName, phoneNumber, cardCVV)) {
+            alert('Thanh toán thành công!');
+        } else {
+            alert('Vui lòng nhập thông tin thanh toán hợp lệ.');
+        }
+    });
+});
+
+//  kiểm tra thông tin thẻ 
+function validateCardDetails(fullName, phoneNumber, name, number, expiry, cvv) {
+    if (fullName === '' || phoneNumber === '' || cvv.length ==='') {
+        return false;
+    }
+    return true;
+}
+
+    </script>
+</body>
+</html>

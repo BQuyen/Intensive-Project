@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summertravel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Summertravel</div>
+            <div class="search-wrap">
+                <div class="searchbar">
+                    <input type="text" id="search-input" placeholder="Search for tours...">
+                    <button type="button" id="search-button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+                <div id="message"></div>
+            </div>
+            <nav>
+                <a class="btn login" href="./login.html">Login</a>
+                <a class="btn register" href="./register.html">Register</a>
+                <span id="user-info" style="display: none;font-size: 24px; 
+                border: 1px solid #ffffff; border-radius: 28px; padding:5px 7px; background-color: #ffffff; color:#333; 
+                cursor:pointer; margin-right: 30px; margin-left: 100px; "></span>
+            </nav>
+        </div>
+    </header>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="./video/header-video.mp4" type="video/mp4">
+        </video>
+        <div class="video-overlay">
+            <h1>Du lịch Việt Nam cùng Summertravel</h1>
+            <a href="#place">Khám phá ngay&#8594;</a>
+        </div>
+    </div>
+    <div>
+        <div class="what-we-serve">
+            <div class="wws-container">
+                <h1>Dịch vụ của chúng tôi</h1>
+                <div class="serve-container">
+                    <div class="serve-item">
+                        <i class="fas fa-thumbs-up icon"></i>
+                        <h3>Lot of Choices</h3>
+                        <p>Đa dạng lựa chọn</p>
+                    </div>
+                    <div class="serve-item">
+                        <i class="fas fa-user-tie icon"></i>
+                        <h3>Best Tour Guide</h3>
+                        <p>Hướng dẫn viên chuyên nghiệp</p>
+                    </div>
+                    <div class="serve-item">
+                        <i class="fas fa-calendar-check icon"></i>
+                        <h3>Easy Booking</h3>
+                        <p>Đặt tour dễ dàng</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="place-container"id="place">
+            <h1>Best tours</h1>
+            <div class="card-container">
+                <div class="row">
+                    <div class="column1">
+                        <div class="card" style="background-image: url('https://statics.vinwonders.com/dia-diem-du-lich-ha-noi-4_1688468952.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Hà Nội</h3>
+                                    <p class="rating"><i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                </div>
+                                <a href="./hanoi.html">View tours</a>
+                            </div>
+                        </div>
+                        <div class="card" style="background-image: url('https://viendongtravel.com.vn/wp-content/uploads/2019/11/%C4%91%C3%A0-n%E1%BA%B5ng.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Đà Nẵng</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </p>
+                                </div>
+                                <a href="./danang.html">View tours</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column2">
+                        <div class="card" style="background-image: url('https://image.baophapluat.vn/w800/Uploaded/2024/athlrainaghat/2022_02_03/bai-bao-xuan-quynhnga-di-san-hue-h-4-4535.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Huế</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                </div>
+                                <a href="./hue.html">View tours</a>
+                            </div>
+                        </div>
+                        <div class="card" style="background-image: url('https://lilystravelagency.com/wp-content/uploads/2023/01/Nha-Trang.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Nha Trang</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i></p>
+                                </div>
+                                <a href="./nhatrang.html">View tours</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="row">
+                    <div class="column2">
+                        <div class="card" style="background-image: url('https://static.vinwonders.com/2022/05/DJI_0087-1-scaled.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Phú Quốc</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                </div>
+                                <a href="./phuquoc.html">View tours</a>
+                            </div>
+                        </div>
+                        <div class="card" style="background-image: url('https://puluongexcursions.com/wp-content/uploads/2023/06/thumb-16.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Đà Lạt</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i></p>
+                                </div>
+                                <a href="./dalat.html">View tours</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="column1">
+                        <div class="card" style="background-image: url('https://sodulich.ninhbinh.gov.vn/uploads/images/trang_an1.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Ninh Bình</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                </div>
+                                <a href="./ninhbinh.html">View tours</a>
+                            </div>
+                        </div>
+                        <div class="card" style="background-image: url('https://bqn.1cdn.vn/2022/04/04/images.baoquangnam.vn-storage-newsportal-2022-4-4-125513-_b1.jpg');">
+                            <div class="card-info">
+                                <div class="info">
+                                    <h3>Hội An</h3>
+                                    <p class="rating">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i></p>
+                                </div>
+                                <a href="./hoian.html">View tours</a>
+                            </div>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>     
+        <div class="top-tour-guide">
+            <div class="guide-wrap">
+                <h1>Đội ngũ hướng dẫn viên hàng đầu</h1>
+                <div class="guide-container">
+                    <div class="guide-item">
+                        <img src="https://intramuros.gov.ph/wp-content/uploads/2022/05/Screen-Shot-2022-05-16-at-3.09.20-PM.png" alt="Tour Guide 1">
+                        <h3>Nguyễn Văn A</h3>
+                        <p>20 năm kinh nghiệm</p>
+                    </div>
+                    <div class="guide-item">
+                        <img src="https://maikatours.com/wp-content/uploads/2019/05/Xu%C3%A2n-Huy%E1%BB%81n-1-e1557241326162.jpg" alt="Tour Guide 2">
+                        <h3>Phạm Thị B</h3>
+                        <p>10 năm kinh nghiệm</p>
+                    </div>
+                    <div class="guide-item">
+                        <img src="https://media.licdn.com/dms/image/C4D03AQHiXapcPghEVg/profile-displayphoto-shrink_100_100/0/1655789201139?e=2147483647&v=beta&t=3YLlzuiwc6rAP57zRhtraJynk-x4mkjty5jwMhoz3NI" alt="Tour Guide 3">
+                        <h3>Trần Văn C</h3>
+                        <p>12 năm kinh nghiệm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="news-wrap">
+            <h1>Blog news</h1>
+            <div class="news-container">
+                <div class="news-item">
+                    <div class="image-container">
+                        <img src="https://photo-cms-vovworld.zadn.vn/w500/Uploaded/vovworld/qjhmn/2022_11_14/a1_GNUD.jpg" alt="News Image 1" class="news-image">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-calendar-alt"></i> 25/06/2024</span>
+                            <span class="news-comments"><i class="fas fa-comments"></i> 2</span>
+                        </div>
+                        <h2 class="news-title">Tiêu đề bài viết 1</h2>
+                        <p class="news-text">Nội dung tóm tắt bài viết 1. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur interdum purus...</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+            
+                <div class="news-item">
+                    <div class="image-container">
+                        <img src="https://image.baophapluat.vn/w840/Uploaded/2024/athlrainaghat/2023_06_29/du-lich-viet-nam-nam-2023-co-hoi-chuyen-minh-tro-thanh-nganh-kinh-te-mui-nhon-084136295-9577.jpg" alt="News Image 2" class="news-image">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-calendar-alt"></i> 24/06/2024</span>
+                            <span class="news-comments"><i class="fas fa-comments"></i>1</span>
+                        </div>
+                        <h2 class="news-title">Tiêu đề bài viết 2</h2>
+                        <p class="news-text">Nội dung tóm tắt bài viết 2. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur interdum purus...</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+    
+                <div class="news-item">
+                    <div class="image-container">
+                        <img src="https://dulichsaigon.edu.vn/wp-content/uploads/2024/01/hoi-an-thanh-pho-du-lich-o-viet-nam-thu-hut-nhieu-du-khach.jpg" alt="News Image 3" class="news-image">
+                    </div>
+                    <div class="news-content">
+                        <div class="news-meta">
+                            <span class="news-date"><i class="fas fa-calendar-alt"></i> 23/06/2024</span>
+                            <span class="news-comments"><i class="fas fa-comments"></i>0</span>
+                        </div>
+                        <h2 class="news-title">Tiêu đề bài viết 3</h2>
+                        <p class="news-text">Nội dung tóm tắt bài viết 3. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque consectetur interdum purus...</p>
+                        <a href="#" class="read-more">Đọc thêm</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+</main>
+<footer>
+    <div class="footer">
+        <h3>Chính sách du lịch</h3>
+        <ul>
+            <li><a href="#">Chính sách hoàn tiền</a></li>
+            <li><a href="#">Chính sách bảo mật thông tin</a></li>
+            <li><a href="#">Điều khoản sử dụng</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <h3>Dịch vụ</h3>
+        <ul>
+            <li><a href="#">Thông tin du lịch</a></li>
+            <li><a href="#">Mua sắm trực tuyến</a></li>
+        </ul>
+    </div>
+    <div class="footer">
+        <h3>Liên hệ</h3>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+</footer>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-auth.js";
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/9.12.1/firebase-firestore.js";
+  
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "AIzaSyD4LoEZuOpThXPeF4y-dnTfAO4hTUtwn04",
+          authDomain: "summertravel-c678c.firebaseapp.com",
+          projectId: "summertravel-c678c",
+          storageBucket: "summertravel-c678c.appspot.com",
+          messagingSenderId: "1014082318126",
+          appId: "1:1014082318126:web:5d62e1b37e6cadd56354bf",
+          measurementId: "G-D9SVVJ4HME",
+        };
+  
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+  
+        // Function to fetch and display user information
+        const fetchAndDisplayUserInfo = async (userId) => {
+          try {
+            const userDoc = await getDoc(doc(db, "users", userId));
+            if (userDoc.exists()) {
+              const userData = userDoc.data();
+              const userInfoSpan = document.getElementById("user-info");
+              userInfoSpan.textContent = `${userData.username}`;
+              userInfoSpan.style.display = "inline";
+              document.querySelector(".login").style.display = "none";
+              document.querySelector(".register").style.display = "none";
+            }
+          } catch (error) {
+            console.error("Error fetching user info: ", error);
+          }
+        };
+  
+        // Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            fetchAndDisplayUserInfo(user.uid);
+          }
+        });
+        const cityPages = {
+            hanoi: "./hanoi.html",
+            danang: "./danang.html",
+            hue: "./hue.html",
+            nhatrang: "./nhatrang.html",
+            hoian: "./hoian.html",
+            phuquoc: "./phuquoc.html",
+            dalat: "./dalat.html",
+            ninhbinh: "./ninhbinh.html"
+        };
+
+        // Event listener for search button
+        document.getElementById("search-button").addEventListener("click", function () {
+            const searchInput = document.getElementById("search-input").value.toLowerCase();
+            const cityPage = cityPages[searchInput];
+
+            if (cityPage) {
+                // Simulate a click on a hidden <a> element to navigate to the city page
+                const hiddenLink = document.createElement("a");
+                hiddenLink.href = cityPage;
+                hiddenLink.style.display = "none";
+                document.body.appendChild(hiddenLink);
+                hiddenLink.click();
+            } else {
+                document.getElementById("message").textContent = "No tours yet. Please try again.";
+            }
+        });
+      </script>
+</footer>
+</body>
+</html>

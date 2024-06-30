@@ -1,0 +1,146 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: rgb(182, 249, 221);
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0 0 20px;
+}
+.logo {
+    font-size: 34px;
+    font-weight: bold;
+    font-family: cursive;
+    background: linear-gradient(to right, #ffc120, #faa69e);
+    -webkit-background-clip: text;
+    color: transparent;
+    cursor: pointer;
+}
+/* CSS cho trang chi tiết */
+.tour-details {
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.tour-details img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tour-details a {
+    display: inline-block;
+    margin: 10px 0;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 5px;
+    background-color: #007BFF;
+    transition: background-color 0.2s;
+}
+
+.tour-details a:hover {
+    background-color: #0056b3;
+}
+
+#comments-section {
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+#comments-section div {
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+#comment-input {
+    width:95%;
+    height: 50px;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #fff;
+}
+
+button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+footer {
+    margin-top: 50px;
+    padding: 20px;
+    background: linear-gradient( #ffffff, rgb(182, 249, 221));
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    max-width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+
+footer h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+footer ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+footer ul li {
+    margin-bottom: 10px;
+}
+
+footer ul li a {
+    color: rgb(5, 5, 5);
+    text-decoration: none;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    padding: 10px;
+    background: #0f0f0f;
+    border-radius: 65%;
+}
+
+.social-icons a:hover {
+    background: #3b3b3b;
+}
